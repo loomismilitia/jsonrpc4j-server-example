@@ -53,12 +53,20 @@ public class ExampleServerAPIImpl implements ExampleServerAPI {
     }
 }
 ```
-And you're done! When sending requests to your server, please note that setting the content type header is crucial eg:
+
+### Compile and Run Server
+```
+gradle build
+java -jar build/libs/springboot-1.0-SNAPSHOT.jar
+```
+
+### Test
+When sending requests to your server, please note that setting the content type header is crucial eg:
 ```
 curl -H "Content-Type:application/json" -d '{"id":"1","jsonrpc":"2.0","method":"multiplier","params":{"a":5,"b":6}}' http://localhost:8080/calculator
 ```
 
-For windows escape the double quotes
+For windows escape the double quotes:
 ```
 curl -H "Content-Type:application/json" -d {\"id\":\"1\",\"jsonrpc\":\"2.0\",\"method\":\"multiplier\",\"params\":{\"a\":5,\"b\":6}} http://localhost:8080/calculator
 ```
